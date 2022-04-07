@@ -34,13 +34,13 @@ function notificationReceived(req) {
 // add an address to a notification in Alchemy
 async function addAddress(new_address) {
   console.log("adding address " + new_address);
-  const body = { webhook_id: 161804, addresses_to_add: [new_address], addresses_to_remove: [] };
+  const body = { webhook_id: '161804', addresses_to_add: [new_address], addresses_to_remove: [] };
   try {
     fetch('https://dashboard.alchemyapi.io/api/update-webhook-addresses', {
       method: 'PATCH',
       body: JSON.stringify(body),
       headers: { 'Content-Type': 'application/json' },
-      headers: { 'X-Alchemy-Token': EQwQyPGWuHIrKdLgP7SOp0n3DPckK_Zy}
+      headers: { 'X-Alchemy-Token': 'EQwQyPGWuHIrKdLgP7SOp0n3DPckK_Zy'}
     })
       .then(res => res.json())
       .then(json => console.log(json));
